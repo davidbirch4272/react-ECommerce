@@ -14,7 +14,7 @@ const Featured = () => {
             <div className="book">
               <a href="">
                 <figure className="book__image--wrapper">
-                <img scr="." alt="" className="book__img"/>
+                <img scr="https://m.media-amazon.com/images/I/81ANaVZk5LL._AC_UF1000,1000_QL80_.jpg" alt="" className="book__img"/> 
                 </figure>
               </a> 
               <div className="book__title">
