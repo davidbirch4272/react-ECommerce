@@ -1,8 +1,12 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalf } from "react-icons/fa";
+import Book from './ui/Book';
+import { books } from '../data';
 
 const Featured = () => {
+  console.log(books);
+  console.log();
+  function getFiveStarBooks () {
+    }
   return (
     <section id="features">
       <div className="container">
@@ -11,30 +15,13 @@ const Featured = () => {
             Featured <span className="purple">Books</span>
           </h2>
           <div className="books">
-            <div className="book">
-              <a href="">
-                <figure className="book__image--wrapper">
-                <img scr="https://m.media-amazon.com/images/I/81ANaVZk5LL._AC_UF1000,1000_QL80_.jpg" alt="" className="book__img"/> 
-                </figure>
-              </a> 
-              <div className="book__title">
-                <a href="/" className="book__title--link">
-                  Atomic Habits
-                </a>
-              </div>
-              <div className="book__ratings">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalf />
-               <div className="book__price">
-               <span className="book__price--normal">$15.00</span>
-               $10.00 
-                </div> 
-              </div>
+            {books
+              .filter(book => book.rating === 5)
+              .slice(0, 4)
+              .map((book) => (
+               <Book book={book} key={book.id}/>
+               ))}
             </div>
-          </div>
         </div>
       </div>
     </section>
