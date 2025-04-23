@@ -1,19 +1,22 @@
-import Nav from './components/Nav';
-import Landing from './components/landing';
-import Highlights from './components/Highlights';
-import { FaBeer } from 'react-icons/fa'; 
-import Featured from './components/Featured';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Books from "../src/pages/Books";
+import { books } from "../src/data"
+import BookInfo from "./pages/BookInfo";
 
 function App() {
   return (
-    <div className="App">
-     <Nav />
-     <Landing />
-     <Highlights />
-     <Featured />
-     
-     
-    </div>
+    <Router>
+      <div className="App">
+          <Nav />
+          <Route path="/" exact component={Home} />
+          <Route path="/books" render={() => <Books books={books} />} />
+          <Route path="/books/1" render={() => <BookInfo books={books} />} />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

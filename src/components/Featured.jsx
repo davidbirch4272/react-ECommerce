@@ -1,6 +1,7 @@
 import React from "react";
 import Book from './ui/Book';
 import { books } from '../data';
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   console.log(books);

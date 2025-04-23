@@ -2,33 +2,35 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
   return (
     <div className="book">
-      <a href="">
+      <Link to="">
         <figure className="book__image--wrapper">
           <img src={book.url} alt="" className="book__img" />
         </figure>
-      </a>
+      </Link>
       <div className="book__title">
-        <a href="/" className="book__title--link">
+        <Link to="/" className="book__title--link">
           {book.title}
-        </a>
+        </Link>
       </div>
       <div className="book__ratings">
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStarHalf />
+       {
+          new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FaStar key={index} /> )
+        }
+        {
+          !Number.isInteger(book.rating) && <FaStarHalf />
+        }
         <div className="book__price">
-          {book.salesPrice ? (
+          {book.salePrice ? (
             <>
               <span className="book__price--normal">
                 ${book.originalPrice.toFixed(2)}
               </span>
-              ${book.salesPrice.toFixed(2)}
+              ${book.salePrice.toFixed(2)}
             </>
           ) : (
            <>${book.originalPrice.toFixed(2)}</>
