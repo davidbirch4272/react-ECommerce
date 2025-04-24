@@ -1,4 +1,3 @@
-import { GiHamburgerMenu } from "react-icons/gi";
 import React from 'react';
 import { FaBolt } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
