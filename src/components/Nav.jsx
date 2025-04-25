@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaRegWindowClose } from "react-icons/fa";
 import { Link } from "react-router-dom"
 
-const Nav = () => {
+const Nav = ({ numberOfItems }) => {
   function openMenu() {
     document.body.classList += " menu--open"; 
   }
@@ -37,7 +37,9 @@ const Nav = () => {
           <li className="nav__icon">
           <Link to="/cart" className="nav__link"></Link>
             <FaShoppingCart />
-            <span className="cart__length"> 2</span>
+            {
+             numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>
+            }
           </li>
         </ul>
         <div className="menu__backdrop">

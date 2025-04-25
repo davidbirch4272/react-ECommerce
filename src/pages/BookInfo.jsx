@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Rating from "../components/ui/Rating";
@@ -58,7 +58,9 @@ function bookExistsOnCart() {
                       optio deserunt, repellendus modi nisi. Enim, error?
                     </p>
                     {bookExistsOnCart() ? (
-                      <button className="btn">Checkout</button>
+                    <Link to={`/cart`} className="book__link">
+                    <button className="btn">Checkout</button>
+                    </Link>
                     ): (
                       <button className="btn" onClick={() => addBookToCart(book)}>
                       Add to Cart
