@@ -48,7 +48,7 @@ const Book = ({ book }) => {
         <>
           <div className="book__img--skeleton"></div>
           <div className="skeleton book__title--skeleton"></div>
-          <div class Name="skeleton book__rating--skeleton"></div>
+          <div className="skeleton book__rating--skeleton"></div>
           <div className="skeleton book__price--skeleton"></div>
         </>
       )}
