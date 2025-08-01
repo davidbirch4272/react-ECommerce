@@ -61,7 +61,7 @@ const Nav = ({ numberOfItems }) => {
             </li>
 
             <li className="menu__list">
-              <Link to="/cart" className="menu__link">
+              <Link to="/Cart" className="menu__link">
               Cart
               </Link>
             </li>
