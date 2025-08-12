@@ -54,7 +54,7 @@ console.log(cart);
           <Route path="/" exact component={Home} />
           <Route path="/books" exact render={() => <Books books={books} />} />
           <Route path="/books/:id" render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} />}/>
-          <Route path="/cart" render={() => <Cart  
+          <Route path="/Cart" render={() => <Cart  
           books={books} 
           cart={cart} changeQuantity={changeQuantity}
           removeItem={removeItem}
